@@ -1,9 +1,8 @@
 #-*- coding: utf-8 -*-
-from humor.items import HumorItem
+from humor.items import MensagemItem 
 from scrapy.spider import Spider
 from scrapy.selector import Selector
 import itertools
-
 
 class DmozSpider(Spider):
     name = "humorcombobagem"
@@ -73,8 +72,9 @@ class DmozSpider(Spider):
         link = links[0].xpath('//a/img[@class="img_unica"]/@src').extract()
         title = links[0].xpath('//h2/a/text()').extract()
         for l,t in itertools.izip(link, title):
-             item = HumorItem()
+             item = MensagemItem()
              item['link'] = l
-             item['title'] = t
+             item['titulo'] = t
+             item['tipo'] = "IMAGEM"
              items.append(item)
         return items

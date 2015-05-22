@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
 
-# Define here the models for your scraped items
-#
-# See documentation in:
-# http://doc.scrapy.org/en/latest/topics/items.html
+from scrapy.contrib.djangoitem import DjangoItem
+from scrapy.item import Field
 
-import scrapy
+from core.models import Mensagem
 
 
-class HumorItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    title = scrapy.Field()
-    link = scrapy.Field()
+class MensagemItem(DjangoItem):
+    # fields for this item are automatically created from the django model
+    django_model = Mensagem
+    #title = Field()
+    #link = Field()
+    #tipo = Field
