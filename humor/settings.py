@@ -9,12 +9,13 @@
 #
 # Setting up django's project full path.
 import sys
-sys.path.insert(0, '/home/ec2-user/projetos/ambiente_risada/risada')
+#sys.path.insert(0, '/home/ec2-user/projetos/ambiente_risada/risada')
+sys.path.insert(0, '/Users/thod/PycharmProjects/seed-backend-python/ambiente_revistaria/revistaria')
 
 # Setting up django's settings module name.
 # This module is located at /home/rolando/projects/myweb/myweb/settings.py.
 import os
-os.environ['DJANGO_SETTINGS_MODULE'] = 'risada.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'revistaria.settings'
 
 BOT_NAME = 'humor'
 
